@@ -1,0 +1,4 @@
+/home/ubunter/Desktop/study/C_plus_plus/OTUS/04_homework/cmake-build-debug/CMakeFiles/calc.dir
+/home/ubunter/Desktop/study/C_plus_plus/OTUS/04_homework/cmake-build-debug/CMakeFiles/test.dir
+/home/ubunter/Desktop/study/C_plus_plus/OTUS/04_homework/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ubunter/Desktop/study/C_plus_plus/OTUS/04_homework/cmake-build-debug/CMakeFiles/rebuild_cache.dir
