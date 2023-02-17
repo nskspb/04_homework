@@ -22,11 +22,11 @@ ASTNode *Parser::expr() {
             switch (op.front()) {
             case '+':
                 root = new Add(root, term());
-                return nullptr;
+                //return nullptr;
                 break;
             case '-':
                 root = new Sub(root, term());
-                return nullptr;
+                //return nullptr;
                 break;
             default:
                 return root;
@@ -49,12 +49,11 @@ ASTNode *Parser::term() {
             switch (op.front()) {
             case '*':
                 root = new Mul(root, prim());
-                return nullptr;
+              //  return nullptr;
                 break;
             case '/':
-                // Implement Div class and uncomment this line
-                //root = new Div(root, prim());
-                return nullptr;
+                root = new Div(root, prim());
+              //  return nullptr;
                 break;
             default:
                 return root;
@@ -77,7 +76,7 @@ ASTNode *Parser::prim() {
         break;
     case Token::Name:
         node = new Variable(lexer_.get_name());
-        return nullptr;
+      //  return nullptr;
         break;
     default:
         break;
