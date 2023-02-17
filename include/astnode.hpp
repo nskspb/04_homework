@@ -24,6 +24,7 @@ class ASTNode {
     // Представления имени узла в виде строки
     std::string repr() const { return repr_; }
 
+    // Печать всего дерева в текстовом виде
     void print(std::ostream &out) const;
 
   private:
