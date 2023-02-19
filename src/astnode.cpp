@@ -8,6 +8,7 @@ ASTNode::ASTNode(const std::string &repr, ASTNode *lhs, ASTNode *rhs)
 
 ASTNode::~ASTNode()
 {
+    //  std ::cout << "destructor!";
     delete lhs_;
     delete rhs_;
 }
