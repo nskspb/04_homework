@@ -12,21 +12,24 @@ ASTNode *Parser::parse() { return expr(); }
 
 void Parser::next_token() { tok_ = lexer_.next_token(); }
 
-ASTNode *Parser::expr() {
+ASTNode *Parser::expr()
+{
     // parse addition and subsctruction
     ASTNode *root = term();
-    for (;;) {
-        switch (tok_) {
-        case Token::Operator: {
+    for (;;)
+    {
+        switch (tok_)
+        {
+        case Token::Operator:
+        {
             std::string op = lexer_.get_operator();
-            switch (op.front()) {
+            switch (op.front())
+            {
             case '+':
                 root = new Add(root, term());
-                //return nullptr;
                 break;
             case '-':
                 root = new Sub(root, term());
-                //return nullptr;
                 break;
             default:
                 return root;
@@ -39,21 +42,24 @@ ASTNode *Parser::expr() {
     }
 }
 
-ASTNode *Parser::term() {
+ASTNode *Parser::term()
+{
     // parse multiplication and division
     ASTNode *root = prim();
-    for (;;) {
-        switch (tok_) {
-        case Token::Operator: {
+    for (;;)
+    {
+        switch (tok_)
+        {
+        case Token::Operator:
+        {
             std::string op = lexer_.get_operator();
-            switch (op.front()) {
+            switch (op.front())
+            {
             case '*':
                 root = new Mul(root, prim());
-              //  return nullptr;
                 break;
             case '/':
                 root = new Div(root, prim());
-              //  return nullptr;
                 break;
             default:
                 return root;
@@ -66,17 +72,18 @@ ASTNode *Parser::term() {
     }
 }
 
-ASTNode *Parser::prim() {
+ASTNode *Parser::prim()
+{
     // parse numbers and names
     ASTNode *node = nullptr;
     next_token();
-    switch (tok_) {
+    switch (tok_)
+    {
     case Token::Number:
         node = new Number(lexer_.get_number());
         break;
     case Token::Name:
         node = new Variable(lexer_.get_name());
-      //  return nullptr;
         break;
     default:
         break;
